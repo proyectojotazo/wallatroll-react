@@ -18,6 +18,9 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'dot-notation': 0,
+    'prefer-promise-reject-errors': 'off',
+    'multiline-ternary': 'off'
   }
 }

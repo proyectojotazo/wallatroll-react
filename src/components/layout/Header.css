@@ -6,22 +6,21 @@
 .header-container {
   background-color: #fff;
   border-bottom: 5px dashed #16c9b4;
-  display: flex;
+  display: grid;
+  grid-template-columns: 120px calc(100vw - 450px) 200px;
+  justify-content: space-around;
 }
 
 .header-icon {
   align-self: center;
-  background-color: #fff;
-  margin: 0 2rem;
-  width: 70px;
+  justify-self: center;
+  width: 60px;
 }
 
 .header-title {
   color: #16c9b4;
-  flex-grow: 1;
   font-family: Montserrat-ExtraBold, Impact, Haettenschweiler,
     'Arial Narrow Bold', sans-serif;
-  justify-content: space-between;
   font-size: 52px;
   padding: 1rem;
   text-shadow: 0 1px 0 #333, 0 2px 0 #444, 0 3px 0 #555, 0 4px 0 #666,

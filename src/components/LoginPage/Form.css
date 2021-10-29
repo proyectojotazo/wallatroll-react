@@ -66,6 +66,20 @@
   margin-left: 0.5rem;
 }
 
+.form-error {
+  color: red;
+  visibility: hidden;
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 60%;
+}
+
+.visible {
+  visibility: initial;
+}
+
 .btn-form {
   margin: 1rem 0;
 }

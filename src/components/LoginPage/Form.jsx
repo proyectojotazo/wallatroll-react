@@ -1,42 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import Button from '../common'
+import { Button } from '../common'
+import FormField from './FormField'
+
+import { useForm, useInput } from '../../hooks'
+import useAuth from '../../contexts/useAuth'
 
 import './Form.css'
 
 const Form = () => {
+  const { handleLogin } = useAuth()
+
+  const [error, setError] = useState(false)
+
+  const email = useInput({ type: 'email', initialValue: '', setError })
+  const password = useInput({ type: 'password', initialValue: '', setError })
+  const checkbox = useInput({ type: 'checkbox', initialValue: false })
+
+  const btnDisabled = email.value === '' || password.value === ''
+
+  const handleSubmit = useForm(handleLogin, setError)
+
   return (
-    <form className='form-container' noValidate>
-      <label className='form-label-input' htmlFor='username'>
-        Usuario
-      </label>
-      <input
-        className='form-input'
-        type='text'
-        name='username'
-        placeholder='Introduce usuario...'
+    <form className='form-container' noValidate onSubmit={handleSubmit}>
+      <FormField
+        labelChild='Usuario'
+        labelFor='email'
+        placeholder='Introduce email...'
+        {...email}
       />
-      <label className='form-label-input' htmlFor='password'>
-        Contraseña
-      </label>
-      <input
-        className='form-input'
-        type='password'
-        name='password'
+      <FormField
+        labelChild='Contraseña'
+        labelFor='password'
         placeholder='Introduce contraseña...'
+        {...password}
       />
       <div className='form-wrapper-checkbox'>
-        <input
-          className='form-input-checkbox'
-          type='checkbox'
-          name='rememberme'
+        <FormField
+          labelChild='Mantenerme logeado'
+          labelFor='rememberme'
           id='rememberme'
+          {...checkbox}
         />
-        <label className='form-label-checkbox' htmlFor='rememberme'>
-          Mantenerme logeado
-        </label>
       </div>
-      <Button variant='primary' margin='mx-2'>
+      <span className={`form-error ${error && 'visible'}`}>
+        El usuario o la contraseña son incorrectos
+      </span>
+      <Button variant='primary' margin='mx-2' disabled={btnDisabled}>
         Iniciar Sesión
       </Button>
     </form>

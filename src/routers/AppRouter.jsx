@@ -1,0 +1,27 @@
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom'
+import { AdvertsPage, LoginPage, NewAdvertPage, AdvertPage } from '../pages'
+import PrivateRoute from './PrivateRoute'
+
+const AppRouter = () => {
+  return (
+    <Router>
+      <Switch>
+        <PrivateRoute exact path='/adverts' component={AdvertsPage} />
+        <PrivateRoute exact path='/advert/:id' component={AdvertPage} />
+        <PrivateRoute exact path='/new' component={NewAdvertPage} />
+        <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/'>
+          <Redirect to='/adverts' />
+        </Route>
+      </Switch>
+    </Router>
+  )
+}
+
+export default AppRouter
