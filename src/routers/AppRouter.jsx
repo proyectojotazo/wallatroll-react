@@ -5,7 +5,13 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom'
-import { AdvertsPage, LoginPage, NewAdvertPage, AdvertPage } from '../pages'
+import {
+  AdvertsPage,
+  LoginPage,
+  NewAdvertPage,
+  AdvertPage,
+  NotFoundPage
+} from '../pages'
 import PrivateRoute from './PrivateRoute'
 
 const AppRouter = () => {
@@ -19,6 +25,7 @@ const AppRouter = () => {
         <Route exact path='/'>
           <Redirect to='/adverts' />
         </Route>
+        <Route path='*' component={NotFoundPage} />
       </Switch>
     </Router>
   )

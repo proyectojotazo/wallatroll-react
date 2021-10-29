@@ -5,7 +5,7 @@ import useAuth from '../contexts/useAuth'
 const PrivateRoute = ({ component: Component, ...props }) => {
   const { isLogged } = useAuth()
   const location = useLocation()
-  console.log(location)
+
   return (
     <Route {...props}>
       {isLogged ? (

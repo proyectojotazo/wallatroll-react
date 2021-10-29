@@ -21,3 +21,15 @@ export const logout = () =>
     removeAuthorizationHeader()
     storage.remove('token')
   })
+
+export const getAdverts = async () => {
+  /**
+   * TODO: Hay que setear el authorization cada vez que se hace la petición.
+   * Mirar de hacerlo mejor
+   */
+
+  const accessToken = storage.get('token')
+  setAuthorizationHeader(accessToken)
+  const data = await client.get('/api/v1/adverts')
+  return data
+}
