@@ -4,8 +4,12 @@ import PropTypes from 'prop-types'
 import './AdvertsCard.css'
 
 const AdvertsCard = ({ advert }) => {
+  const URI = 'http://localhost:3001'
   return (
     <div className='card'>
+      {advert.photo && (
+        <img className='card-img' src={`${URI}${advert.photo}`} alt='' />
+      )}
       <h2 className='card-title'>{advert.name}</h2>
       <div className='card-data-wrapper'>
         <p className='card-data-text'>Precio: {advert.price}€</p>

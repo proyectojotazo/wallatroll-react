@@ -1,8 +1,10 @@
 import { useState } from 'react'
 
-import { logout } from '../components/services'
+import userServices from '../api/userServices'
 
-import isAuth from '../utils/isAuth'
+import storage from '../utils/storage'
+
+const isAuth = () => !!storage.get('token')
 
 const useLogin = () => {
   /**
@@ -16,7 +18,7 @@ const useLogin = () => {
   }
 
   const handleLogout = async () => {
-    await logout()
+    await userServices.logout()
     setIsLogged(false)
   }
 

@@ -4,13 +4,10 @@ import { Button } from '../common'
 import FormField from './FormField'
 
 import { useForm, useInput } from '../../hooks'
-import useAuth from '../../contexts/useAuth'
 
 import './Form.css'
 
 const Form = () => {
-  const { handleLogin } = useAuth()
-
   const [error, setError] = useState(false)
 
   const email = useInput({ type: 'email', initialValue: '', setError })
@@ -19,7 +16,7 @@ const Form = () => {
 
   const btnDisabled = email.value === '' || password.value === ''
 
-  const handleSubmit = useForm(handleLogin, setError)
+  const handleSubmit = useForm(setError)
 
   return (
     <form className='form-container' noValidate onSubmit={handleSubmit}>

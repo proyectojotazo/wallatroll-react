@@ -15,7 +15,7 @@ const Button = ({ children, variant = '', margin = '', ...props }) => {
 }
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  children: PropTypes.string,
   variant: PropTypes.string,
   margin: PropTypes.string
 }

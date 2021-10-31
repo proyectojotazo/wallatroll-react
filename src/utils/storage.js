@@ -7,16 +7,18 @@ export default {
     return JSON.parse(value)
   },
 
-  set: (key, value, saveLocal) => {
+  remove: function (key) {
+    localStorage.removeItem(key)
+    sessionStorage.removeItem(key)
+  },
+
+  set: function (key, value, saveLocal) {
+    this.remove(key)
+
     if (saveLocal) {
       localStorage.setItem(key, JSON.stringify(value))
     } else {
       sessionStorage.setItem(key, JSON.stringify(value))
     }
-  },
-
-  remove: key => {
-    localStorage.removeItem(key)
-    sessionStorage.removeItem(key)
   }
 }

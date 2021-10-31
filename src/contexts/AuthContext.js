@@ -1,5 +1,5 @@
 import React, { createContext } from 'react'
-import useLogin from '../hooks/useLogin'
+import { useLogin } from '../hooks'
 
 const AuthContext = createContext()
 

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Header from './Header'
 
 import './Layout.css'
+// TODO: Loader stuff
 // import Loader from './Loader'
 
 const Layout = ({ children }) => {

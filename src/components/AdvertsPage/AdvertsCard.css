@@ -3,12 +3,13 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  height: 250px;
+  height: 350px;
   margin: 1rem;
   width: 250px;
 }
 
 .card-title {
+  background: linear-gradient(to bottom, #0d786b 0%, #16c9b4 50%, #0d786b 100%);
   border-bottom: 1px solid #fff;
   display: block;
   font-style: italic;
@@ -42,4 +43,9 @@
   gap: 1rem;
   justify-content: center;
   list-style: none;
+}
+
+.card-img {
+  object-fit: cover;
+  height: 150px;
 }

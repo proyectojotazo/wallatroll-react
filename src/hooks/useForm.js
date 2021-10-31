@@ -1,20 +1,17 @@
 import { useHistory, useLocation } from 'react-router-dom'
-import { login } from '../components/services'
+import userServices from '../api/userServices'
+import useAuth from '../contexts/useAuth'
 
-const useForm = (onLogin, setError) => {
+const useForm = setError => {
   /**
-   * onLogin comes from AuthContext
-   * onLogin changes isLogged to true when we login successfully.
-   *
    * setError is used to show an error when we recieve an invalid
    * username/password
    *
    */
+  const { handleLogin } = useAuth()
+
   const history = useHistory()
   const location = useLocation()
-
-  // const next =
-  //   location.state?.next === undefined ? '/adverts' : location.state?.next
 
   const next = location.state?.next
 
@@ -29,8 +26,8 @@ const useForm = (onLogin, setError) => {
     }
 
     try {
-      await login(userLogin)
-      onLogin()
+      await userServices.login(userLogin)
+      handleLogin()
       history.push(next || '/adverts')
     } catch (error) {
       setError(true)

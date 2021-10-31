@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { getAdverts } from '../services'
+import React from 'react'
+import { useAdverts } from '../../hooks'
 import AdvertsCard from './AdvertsCard'
 
 import './AdvertsContainer.css'
 
 const AdvertsContainer = () => {
-  const [adverts, setAdverts] = useState([])
-
-  useEffect(async () => {
-    const adverts = await getAdverts()
-    setAdverts(adverts)
-  }, [])
+  const adverts = useAdverts()
 
   return (
     <section className='advertsContainer'>
