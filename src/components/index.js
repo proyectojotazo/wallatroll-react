@@ -1,0 +1,6 @@
+export { default as AdvertContainer } from './AdvertPage/AdvertContainer'
+export { default as AdvertsContainer } from './AdvertsPage/AdvertsContainer'
+export { default as FormLogin } from './LoginPage/FormLogin'
+export { default as FormCreateNewAdvert } from './NewAdvertPage/FormCreateNewAdvert'
+export { default as NotFoundContainer } from './NotFoundPage/NotFoundContainer'
+export { default as Layout } from './layout/Layout'

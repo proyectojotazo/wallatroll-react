@@ -1,0 +1,17 @@
+.checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 1rem auto;
+}
+
+.label-checkbox {
+  align-self: center;
+  margin-left: 0.5rem;
+}
+
+.input-checkbox {
+  margin: 0.5rem 0;
+  width: 20px;
+  height: 20px;
+}

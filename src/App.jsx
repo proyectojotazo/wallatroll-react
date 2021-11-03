@@ -1,7 +1,7 @@
 import React from 'react'
 
 import AppRouter from './routers/AppRouter'
-import Layout from './components/layout/'
+import { Layout } from './components'
 
 import { AuthProvider } from './contexts'
 

@@ -1,6 +1,6 @@
 import { useHistory, useLocation } from 'react-router-dom'
-import userServices from '../api/userServices'
-import useAuth from '../contexts/useAuth'
+import userServices from '../../api/userServices'
+import useAuth from '../../contexts/useAuth'
 
 const useForm = setError => {
   /**
@@ -19,14 +19,8 @@ const useForm = setError => {
     e.preventDefault()
     const data = new FormData(e.target)
 
-    const userLogin = {
-      email: data.get('email'),
-      password: data.get('password'),
-      checked: data.get('rememberme')
-    }
-
     try {
-      await userServices.login(userLogin)
+      await userServices.login(data)
       handleLogin()
       history.push(next || '/adverts')
     } catch (error) {

@@ -4,18 +4,28 @@ import { removeAuthorizationHeader, setAuthorizationHeader } from './client'
 import storage from '../utils/storage'
 
 export default {
-  login: async function (userData) {
+  getUserData: function (data) {
+    return {
+      email: data.get('email'),
+      password: data.get('password'),
+      rememberme: data.get('rememberme')
+    }
+  },
+
+  login: async function (data) {
     /**
      * saveLocal indicates if we save token in localStorage(true) or in
      * sessionStorage(null)
      */
+    const userData = this.getUserData(data)
 
     const { accessToken } = await requestServices.post(
       '/api/auth/login',
       userData
     )
 
-    const saveLocal = userData.checked
+    const saveLocal = userData.rememberme
+    console.log(saveLocal)
     setAuthorizationHeader(accessToken)
     storage.set('token', accessToken, saveLocal)
   },

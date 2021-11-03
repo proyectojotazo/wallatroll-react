@@ -1,6 +1,6 @@
 import React from 'react'
-import Form from '../components/NewAdvertPage'
+import { FormCreateNewAdvert } from '../components'
 
-const NewAdvertPage = () => <Form />
+const NewAdvertPage = () => <FormCreateNewAdvert />
 
 export default NewAdvertPage

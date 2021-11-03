@@ -1,5 +1,5 @@
 import React from 'react'
-import AdvertContainer from '../components/AdvertPage'
+import { AdvertContainer } from '../components/'
 
 const AdvertPage = () => <AdvertContainer />
 

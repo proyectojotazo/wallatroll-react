@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AdvertsContainer from '../components/AdvertsPage'
+import { AdvertsContainer } from '../components'
 
 const AdvertsPage = () => <AdvertsContainer />
 
