@@ -7,6 +7,8 @@ import SelectField from './SelectField'
 import Radio from './Radio'
 import { Button, Input } from '../common'
 
+import './FormCreateNewAdvert.css'
+
 const FormCreateNewAdvert = () => {
   // TODO: Mirar errores
   const [, setError] = useState(false)

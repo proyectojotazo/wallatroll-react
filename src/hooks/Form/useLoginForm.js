@@ -2,7 +2,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import userServices from '../../api/userServices'
 import useAuth from '../../contexts/useAuth'
 
-const useForm = setError => {
+const useForm = setMsg => {
   /**
    * setError is used to show an error when we recieve an invalid
    * username/password
@@ -24,7 +24,11 @@ const useForm = setError => {
       handleLogin()
       history.push(next || '/adverts')
     } catch (error) {
-      setError(true)
+      setMsg({
+        success: false,
+        error: true,
+        message: 'El usuario y/o la contraseña son incorrectos'
+      })
     }
   }
 

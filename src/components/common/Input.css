@@ -1,14 +1,32 @@
+/*Input Wrappers*/
+
 .input-wrapper {
-  width: 60%;
-  margin: 0.5rem auto;
   display: flex;
   flex-direction: column;
+  width: 60%;
+  margin: 1rem auto;
 }
+
+.checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 1rem auto;
+}
+
+/*Input Labels*/
 
 .label-input {
   font-size: 16px;
   padding: 0.5rem 0;
 }
+
+.label-checkbox {
+  align-self: center;
+  margin-left: 0.5rem;
+}
+
+/* Inputs */
 
 .input {
   border: none;
@@ -31,4 +49,10 @@
 .input:focus::placeholder {
   color: #fff;
   text-shadow: 1px 1px 1px #000;
+}
+
+.input-checkbox {
+  margin: 0.5rem 0;
+  width: 20px;
+  height: 20px;
 }

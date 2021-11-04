@@ -3,20 +3,20 @@ import React, { useState } from 'react'
 import { useLoginForm, useInput, useCheckbox } from '../../hooks/'
 
 import Checkbox from './Checkbox'
-import { Button, Input } from '../common'
+import { Button, Input, Msg } from '../common'
 
 import './FormLogin.css'
 
 const FormLogin = () => {
-  const [error, setError] = useState(false)
+  const [msg, setMsg] = useState({ success: false, error: false, message: '' })
 
-  const email = useInput({ type: 'email', name: 'email', setError })
-  const password = useInput({ type: 'password', name: 'password', setError })
+  const email = useInput({ type: 'email', name: 'email', setMsg })
+  const password = useInput({ type: 'password', name: 'password', setMsg })
   const checkbox = useCheckbox({ type: 'checkbox' })
 
   const btnDisabled = email.value === '' || password.value === ''
 
-  const handleSubmit = useLoginForm(setError)
+  const handleSubmit = useLoginForm(setMsg)
 
   return (
     <form className='form-container' noValidate onSubmit={handleSubmit}>
@@ -39,9 +39,7 @@ const FormLogin = () => {
         id='rememberme'
         {...checkbox}
       />
-      <span className={`form-error ${error && 'visible'}`}>
-        El usuario o la contraseña son incorrectos
-      </span>
+      <Msg msg={msg} />
       <Button variant='primary' margin='mx-1' disabled={btnDisabled}>
         Iniciar Sesión
       </Button>

@@ -24,18 +24,18 @@
   background-color: red;
 }
 
-.tags-wrapper-list {
-  margin-left: auto;
-}
-
 .tags-list {
   text-align: center;
   list-style: none;
-  text-transform: capitalize;
+  min-width: 120px;
   min-height: 110px;
 }
 
 .tags-list-title {
   border-bottom: 1px solid black;
   margin-bottom: 0.5rem;
+}
+
+.tags-list-item {
+  text-transform: capitalize;
 }

@@ -25,7 +25,6 @@ export default {
     )
 
     const saveLocal = userData.rememberme
-    console.log(saveLocal)
     setAuthorizationHeader(accessToken)
     storage.set('token', accessToken, saveLocal)
   },

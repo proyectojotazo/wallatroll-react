@@ -17,27 +17,6 @@
   text-align: center;
 }
 
-.form-radio-wrapper,
-.form-tags-wrapper,
-.form-file-wrapper {
-  display: flex;
-  align-items: center;
-  width: 60%;
-  margin: 0.5rem auto;
-}
-
-.form-radio-wrapper {
-  justify-content: center;
-}
-
-.form-file-wrapper {
-  flex-direction: column;
-}
-
-.file-wrapper-label {
-  margin: 0.5rem 0;
-}
-
 .form-error {
   color: red;
   visibility: hidden;

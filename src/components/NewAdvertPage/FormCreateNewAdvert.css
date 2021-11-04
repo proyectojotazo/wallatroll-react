@@ -1,0 +1,17 @@
+.form-radio-wrapper,
+.form-tags-wrapper,
+.form-file-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 0.5rem auto;
+}
+
+.form-file-wrapper {
+  flex-direction: column;
+}
+
+.file-wrapper-label {
+  margin: 0.5rem 0;
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useInput = ({ type, name, setError = () => {} }) => {
+const useInput = ({ type, name, setMsg = () => {} }) => {
   /**
    * Hook props:
    * - type: string
@@ -11,7 +11,11 @@ const useInput = ({ type, name, setError = () => {} }) => {
   const [value, setValue] = useState('')
 
   const onChange = e => {
-    setError(false)
+    setMsg({
+      success: false,
+      error: false,
+      message: ''
+    })
     setValue(e.target.value)
   }
 
