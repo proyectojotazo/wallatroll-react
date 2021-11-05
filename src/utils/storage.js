@@ -1,6 +1,6 @@
 export default {
   get: function (key) {
-    const value = localStorage.getItem(key) || sessionStorage.getItem(key)
+    const value = localStorage.getItem(key)
     if (!value) {
       return null
     }
@@ -9,7 +9,6 @@ export default {
 
   remove: function (key) {
     localStorage.removeItem(key)
-    sessionStorage.removeItem(key)
   },
 
   set: function (key, value, saveLocal) {
@@ -17,8 +16,6 @@ export default {
 
     if (saveLocal) {
       localStorage.setItem(key, JSON.stringify(value))
-    } else {
-      sessionStorage.setItem(key, JSON.stringify(value))
     }
   }
 }

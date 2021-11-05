@@ -14,8 +14,7 @@ export default {
 
   login: async function (data) {
     /**
-     * saveLocal indicates if we save token in localStorage(true) or in
-     * sessionStorage(null)
+     * saveLocal indicates if we save token in localStorage
      */
     const userData = this.getUserData(data)
 

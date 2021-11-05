@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './AdvertsCard.css'
+const URI = process.env.REACT_APP_API_BASE_URL
 
 const AdvertsCard = ({ advert }) => {
-  const URI = 'http://localhost:3001'
   return (
     <div className='card'>
       {advert.photo && (
