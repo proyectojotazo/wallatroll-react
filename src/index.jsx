@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { setAuthorizationHeader } from './api/client'
 
 import App from './App'
+
+import { setAuthorizationHeader } from './api/client'
 import storage from './utils/storage'
 
 const accessToken = storage.get('token')

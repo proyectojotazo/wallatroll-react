@@ -1,0 +1,33 @@
+.filter-form {
+  align-items: center;
+  background: -moz-linear-gradient(top, #0d786b 0%, #16c9b4 50%, #0d786b 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #0d786b 0%,
+    #16c9b4 50%,
+    #0d786b 100%
+  );
+  background: linear-gradient(to bottom, #0d786b 0%, #16c9b4 50%, #0d786b 100%);
+  display: flex;
+  color: #fff;
+  gap: 1rem;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.filter-radio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.range-custom-width {
+  width: 30%;
+}
+
+.filter-tags-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import './AdvertsCard.css'
 const URI = process.env.REACT_APP_API_BASE_URL
@@ -25,6 +26,9 @@ const AdvertsCard = ({ advert }) => {
           ))}
         </ul>
       </div>
+      <Link to={`advert/${advert.id}`} className='card-detail'>
+        Detalle
+      </Link>
     </div>
   )
 }

@@ -13,3 +13,19 @@
   margin-bottom: 70px;
   width: 90%;
 }
+
+.adverts-nocontent-text {
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.adverts-link {
+  text-decoration: none;
+  background-color: #16c9b4;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 1px 1px 1px black;
+  padding: 0.7rem;
+}
