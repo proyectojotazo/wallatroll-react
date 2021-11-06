@@ -1,6 +1,3 @@
-/* eslint-disable indent */
-/* eslint-disable no-unused-vars */
-
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -9,6 +6,7 @@ import FiltersForm from './FiltersForm'
 
 import { useAdverts, useFilters } from '../../hooks'
 import applyFilters from '../../utils/filters'
+
 import './AdvertsContainer.css'
 
 const AdvertsContainer = () => {
@@ -17,8 +15,8 @@ const AdvertsContainer = () => {
 
   const getMaxPrice = (arr = []) => {
     // Hacemos copia para que no desordene el array original
+    if (arr.length === 0) return 1000
     const copy = [...arr]
-    console.log(copy)
     return copy.sort((a, b) => b.price - a.price).shift().price
   }
 
@@ -28,7 +26,7 @@ const AdvertsContainer = () => {
     ? adverts.filter(advert => applyFilters(advert, filters))
     : []
 
-  const maxPrice = adverts.length !== 0 ? getMaxPrice(adverts) : 1000
+  const maxPrice = getMaxPrice(adverts)
 
   return (
     <>
@@ -60,22 +58,3 @@ const AdvertsContainer = () => {
 }
 
 export default AdvertsContainer
-
-// {!hasFilters && adverts.length === 0 ? (
-// <>
-//   <h2 className='adverts-nocontent-text'>No hay anuncios</h2>
-//   <Link to='/adverts/new' className='adverts-link'>
-//     Crea uno
-//   </Link>
-// </>
-// ) : !hasFilters && adverts.length !== 0 ? (
-// adverts.map(advert => <AdvertsCard key={advert.id} advert={advert} />)
-// ) : hasFilters && filteredAdverts.length !== 0 ? (
-//   filteredAdverts.map(advert => (
-//     <AdvertsCard key={advert.id} advert={advert} />
-//   ))
-// ) : (
-//   <h2 className='adverts-nocontent-text'>
-//     No existen anuncios con esos filtros
-//   </h2>
-// )}

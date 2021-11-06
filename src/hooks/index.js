@@ -1,7 +1,6 @@
 export { default as useLoginForm } from './Form/useLoginForm'
 export { default as useInput } from './Form/useInput'
 export { default as useCheckbox } from './Form/useCheckbox'
-export { default as useRadio } from './Form/useRadio'
 export { default as useSelect } from './Form/useSelect'
 export { default as useLogin } from './useLogin'
 export { default as useAdverts } from './useAdverts'

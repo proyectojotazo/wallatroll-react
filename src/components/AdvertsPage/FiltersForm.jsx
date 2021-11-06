@@ -13,7 +13,7 @@ const MyRange = createSliderWithTooltip(Slider.Range)
 const FiltersForm = ({ handleFilters, maxPrice }) => {
   const name = useInput({ type: 'text', name: 'name' })
   const [radioSelected, setRadioSelected] = useState('all')
-  const [sliderVal, setSliderVal] = useState([0, 1000])
+  const [sliderVal, setSliderVal] = useState([0, maxPrice])
   const checkLife = useCheckbox({ type: 'checkbox', name: 'lifestyle' })
   const checkMotor = useCheckbox({ type: 'checkbox', name: 'motor' })
   const checkMobile = useCheckbox({ type: 'checkbox', name: 'mobile' })

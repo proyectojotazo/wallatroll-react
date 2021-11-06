@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { useInput, useRadio } from '../../hooks'
+import { useInput } from '../../hooks'
 import useNewAdvertForm from '../../hooks/Form/useNewAdvertForm'
 
 import SelectField from './SelectField'
@@ -11,14 +11,17 @@ import './FormCreateNewAdvert.css'
 
 const FormCreateNewAdvert = () => {
   // TODO: Mirar errores
-  // TODO: Devolver a /advert/id del anuncio creado
   const [, setError] = useState(false)
 
   const name = useInput({ type: 'text', name: 'name', setError })
   const price = useInput({ type: 'number', name: 'price', setError })
   const file = useInput({ type: 'file', name: 'photo', setError })
 
-  const { checked, handleCheck } = useRadio()
+  const [radioSelected, setRadioSelected] = useState('true')
+
+  const handleRadio = e => {
+    setRadioSelected(e.target.value)
+  }
   const [tags, setTags] = useState([])
 
   const handleSubmit = useNewAdvertForm(tags)
@@ -42,9 +45,9 @@ const FormCreateNewAdvert = () => {
           type='radio'
           name='sale'
           id='sale'
-          value={true}
-          onChange={handleCheck}
-          checked={checked}
+          value='true'
+          onChange={handleRadio}
+          checked={radioSelected === 'true'}
         />
         <Radio
           htmlFor='buy'
@@ -52,9 +55,9 @@ const FormCreateNewAdvert = () => {
           type='radio'
           name='sale'
           id='buy'
-          value={false}
-          onChange={handleCheck}
-          checked={!checked}
+          value='false'
+          onChange={handleRadio}
+          checked={radioSelected === 'false'}
         />
       </div>
       <div className='form-tags-wrapper'>

@@ -6,7 +6,6 @@ const useForm = setMsg => {
   /**
    * setError is used to show an error when we recieve an invalid
    * username/password
-   *
    */
   const { handleLogin } = useAuth()
 
