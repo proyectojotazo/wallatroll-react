@@ -12,7 +12,7 @@ const FormLogin = () => {
 
   const email = useInput({ type: 'email', name: 'email', setMsg })
   const password = useInput({ type: 'password', name: 'password', setMsg })
-  const checkbox = useCheckbox({ type: 'checkbox' })
+  const checkbox = useCheckbox({ type: 'checkbox', name: 'rememberme' })
 
   const btnDisabled = email.value === '' || password.value === ''
 

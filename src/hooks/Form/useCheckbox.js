@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useCheckbox = ({ type }) => {
+const useCheckbox = ({ type, name }) => {
   const [value, setValue] = useState(false)
 
   const onChange = e => {
@@ -8,8 +8,6 @@ const useCheckbox = ({ type }) => {
   }
 
   const checked = value
-
-  const name = 'rememberme'
 
   return {
     type,

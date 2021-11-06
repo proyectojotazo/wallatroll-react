@@ -9,9 +9,4 @@ import storage from './utils/storage'
 const accessToken = storage.get('token')
 setAuthorizationHeader(accessToken)
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById('root'))

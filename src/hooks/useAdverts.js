@@ -8,7 +8,6 @@ const useAdverts = () => {
     const adverts = await advertsServices.getAll()
     setAdverts(adverts)
   }, [])
-
   return adverts
 }
 

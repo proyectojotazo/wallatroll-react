@@ -1,18 +1,52 @@
-/* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'rc-slider'
+
 import Radio from '../NewAdvertPage/Radio'
 import 'rc-slider/assets/index.css'
 import './FiltersForm.css'
 import Checkbox from '../LoginPage/Checkbox'
+import { useCheckbox, useInput } from '../../hooks'
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip
 const MyRange = createSliderWithTooltip(Slider.Range)
 
-const FiltersForm = () => {
+const FiltersForm = ({ handleFilters, maxPrice }) => {
+  const name = useInput({ type: 'text', name: 'name' })
+  const [radioSelected, setRadioSelected] = useState('all')
+  const [sliderVal, setSliderVal] = useState([0, 1000])
+  const checkLife = useCheckbox({ type: 'checkbox', name: 'lifestyle' })
+  const checkMotor = useCheckbox({ type: 'checkbox', name: 'motor' })
+  const checkMobile = useCheckbox({ type: 'checkbox', name: 'mobile' })
+  const checkWork = useCheckbox({ type: 'checkbox', name: 'checkwork' })
+
+  const handleChange = val => {
+    setSliderVal(val)
+  }
+
+  const handleRadioChange = e => {
+    setRadioSelected(e.target.value)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const filters = {
+      name: name.value,
+      saleBuy: radioSelected,
+      price: sliderVal,
+      tags: {
+        lifestyle: checkLife.value,
+        motor: checkMotor.value,
+        mobile: checkMobile.value,
+        work: checkWork.value
+      }
+    }
+
+    handleFilters(filters)
+  }
+
   return (
-    <form noValidate className='filter-form'>
-      <input type='text' name='name' placeholder='Nombre del anuncio' />
+    <form noValidate className='filter-form' onSubmit={handleSubmit}>
+      <input placeholder='Nombre del anuncio' {...name} />
       <div className='filter-radio-wrapper'>
         <Radio
           htmlFor='sale'
@@ -20,7 +54,9 @@ const FiltersForm = () => {
           type='radio'
           name='saleType'
           id='sale'
-          value='1'
+          value='sell'
+          onChange={handleRadioChange}
+          checked={radioSelected === 'sell'}
         />
         <Radio
           htmlFor='buy'
@@ -28,7 +64,9 @@ const FiltersForm = () => {
           type='radio'
           name='saleType'
           id='buy'
-          value='2'
+          value='buy'
+          onChange={handleRadioChange}
+          checked={radioSelected === 'buy'}
         />
         <Radio
           htmlFor='all'
@@ -36,35 +74,39 @@ const FiltersForm = () => {
           type='radio'
           name='saleType'
           id='all'
-          value='3'
+          value='all'
+          onChange={handleRadioChange}
+          checked={radioSelected === 'all'}
         />
       </div>
       <MyRange
-        defaultValue={[0, 10]}
-        max='900'
-        step='10'
+        name='price'
+        max={maxPrice}
         className='range-custom-width'
+        value={sliderVal}
+        onChange={handleChange}
       />
       <div className='filter-tags-wrapper'>
         <Checkbox
           labelText='lifestyle'
           htmlFor='lifestyle'
           id='lifestyle'
-          type='checkbox'
+          {...checkLife}
         />
         <Checkbox
           labelText='motor'
           htmlFor='motor'
           id='motor'
-          type='checkbox'
+          {...checkMotor}
         />
         <Checkbox
           labelText='mobile'
           htmlFor='mobile'
           id='mobile'
-          type='checkbox'
+          {...checkMobile}
         />
-        <Checkbox labelText='work' htmlFor='work' id='work' type='checkbox' />
+        <Checkbox labelText='work' htmlFor='work' id='work' {...checkWork} />
+        <button>Search</button>
       </div>
     </form>
   )

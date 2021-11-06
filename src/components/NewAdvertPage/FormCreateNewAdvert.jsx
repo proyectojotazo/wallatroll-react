@@ -11,6 +11,7 @@ import './FormCreateNewAdvert.css'
 
 const FormCreateNewAdvert = () => {
   // TODO: Mirar errores
+  // TODO: Devolver a /advert/id del anuncio creado
   const [, setError] = useState(false)
 
   const name = useInput({ type: 'text', name: 'name', setError })
@@ -49,7 +50,7 @@ const FormCreateNewAdvert = () => {
           htmlFor='buy'
           labelText='Compra'
           type='radio'
-          name='buy'
+          name='sale'
           id='buy'
           value={false}
           onChange={handleCheck}
