@@ -80,9 +80,3 @@
     > Para cualquier otra url que no coincida se creará un componente
     > **_NotFoundPage_** que informará al usuario que la página solicitada no
     > existe (la típica 404)
-
-### Funcionalidades de los componentes
-
----
-
-# **_EN PROCESO_**
