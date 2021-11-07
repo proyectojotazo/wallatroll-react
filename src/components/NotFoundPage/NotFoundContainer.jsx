@@ -1,11 +1,22 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+
+import './NotFoundContainer.css'
 
 const NotFoundContainer = () => {
-  // TODO: Hacer NOT FOUND
+  const history = useHistory()
+
+  const wrongId = history.location.state?.state
+
+  const notFoundMsg = wrongId
+    ? `No existe el anuncio con id: ${wrongId}`
+    : 'Ups... Pagina no encontrada...'
+
+  console.log(history)
   return (
-    <div>
-      <h1>Not Found - 404</h1>
-    </div>
+    <section className='not-found'>
+      <h2 className='not-found-title'>{notFoundMsg}</h2>
+    </section>
   )
 }
 
