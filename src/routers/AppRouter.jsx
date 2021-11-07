@@ -6,6 +6,7 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom'
+import { Layout } from '../components'
 
 import {
   AdvertsPage,
@@ -20,16 +21,18 @@ import PrivateRoute from './PrivateRoute'
 const AppRouter = () => {
   return (
     <Router>
-      <Switch>
-        <PrivateRoute exact path='/adverts' component={AdvertsPage} />
-        <PrivateRoute exact path='/adverts/new' component={NewAdvertPage} />
-        <PrivateRoute exact path='/advert/:id' component={AdvertPage} />
-        <Route exact path='/login' component={LoginPage} />
-        <Route exact path='/'>
-          <Redirect to='/adverts' />
-        </Route>
-        <Route path='*' component={NotFoundPage} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <PrivateRoute exact path='/adverts' component={AdvertsPage} />
+          <PrivateRoute exact path='/adverts/new' component={NewAdvertPage} />
+          <PrivateRoute exact path='/advert/:id' component={AdvertPage} />
+          <Route exact path='/login' component={LoginPage} />
+          <Route exact path='/'>
+            <Redirect to='/adverts' />
+          </Route>
+          <Route path='*' component={NotFoundPage} />
+        </Switch>
+      </Layout>
     </Router>
   )
 }

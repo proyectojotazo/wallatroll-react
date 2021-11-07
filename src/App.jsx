@@ -1,7 +1,6 @@
 import React from 'react'
 
 import AppRouter from './routers/AppRouter'
-import { Layout } from './components'
 
 import { AuthProvider } from './contexts'
 
@@ -10,9 +9,7 @@ import './App.css'
 const App = () => {
   return (
     <AuthProvider>
-      <Layout>
-        <AppRouter />
-      </Layout>
+      <AppRouter />
     </AuthProvider>
   )
 }

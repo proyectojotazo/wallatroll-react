@@ -3,11 +3,16 @@
   src: url(../../assets/fonts/Montserrat-ExtraBoldItalic.ttf);
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: url(../../assets/fonts/Montserrat-Bold.ttf);
+}
+
 .header-container {
   background-color: #fff;
   border-bottom: 5px dashed #16c9b4;
   display: grid;
-  grid-template-columns: 120px calc(100vw - 450px) 200px;
+  grid-template-columns: 120px calc(100vw - 600px) 300px 200px;
   justify-content: space-around;
 }
 
@@ -28,5 +33,24 @@
     0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
     0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
     0 20px 20px rgba(0, 0, 0, 0.15), 13px 13px 9px rgba(22, 201, 180, 0);
-  text-align: center;
+}
+
+.header-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header-link-item {
+  background-color: #16c9b4;
+  border-radius: 200px;
+  color: #fff;
+  font-size: 14px;
+  font-family: Montserrat, Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  padding: 0.7rem;
+  text-shadow: 1px 1px 1px #000;
+  box-shadow: 1px 1px 1px #000;
+  text-decoration: none;
 }
