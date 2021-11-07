@@ -11,6 +11,9 @@ const createSliderWithTooltip = Slider.createSliderWithTooltip
 const MyRange = createSliderWithTooltip(Slider.Range)
 
 const FiltersForm = ({ handleFilters, maxPrice }) => {
+  // TODO:Refactor?
+  // TODO: PropTypes
+
   const name = useInput({ type: 'text', name: 'name' })
   const [radioSelected, setRadioSelected] = useState('all')
   const [sliderVal, setSliderVal] = useState([0, maxPrice])

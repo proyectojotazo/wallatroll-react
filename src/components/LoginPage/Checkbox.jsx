@@ -2,6 +2,7 @@ import React from 'react'
 import './Checkbox.css'
 
 const Checkbox = ({ htmlFor, labelText, ...props }) => {
+  // TODO: PropTypes
   return (
     <div className='checkbox-wrapper'>
       <input {...props} className='input-checkbox' />

@@ -2,6 +2,7 @@ import React from 'react'
 import './Input.css'
 
 const Input = ({ htmlFor, labelText, ...props }) => {
+  // TODO: PropTypes
   const { type } = props
   return (
     <div className='input-wrapper'>

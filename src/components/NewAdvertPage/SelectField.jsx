@@ -4,6 +4,8 @@ import { useSelect } from '../../hooks'
 import './SelectField.css'
 
 const SelectField = ({ tags, setTags }) => {
+  // TODO: PropTypes
+  // TODO: Refactor?
   const { tagSelected, handleTags, tagsOp } = useSelect()
 
   const handleAddTag = e => {

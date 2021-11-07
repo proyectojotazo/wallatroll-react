@@ -8,6 +8,7 @@ import { Button, Input, Msg } from '../common'
 import './FormLogin.css'
 
 const FormLogin = () => {
+  // TODO: Refactor?
   const [msg, setMsg] = useState({ success: false, error: false, message: '' })
 
   const email = useInput({ type: 'email', name: 'email', setMsg })

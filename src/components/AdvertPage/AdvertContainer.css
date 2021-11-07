@@ -1,0 +1,76 @@
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../../assets/fonts/Montserrat-Black.ttf);
+}
+
+.advert-card {
+  background-color: #16c9b4;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat-Bold;
+  margin: 1rem auto;
+  position: relative;
+  width: fit-content;
+}
+
+.advert-card-name {
+  background: linear-gradient(to bottom, #0d786b 0%, #16c9b4 50%, #0d786b 100%);
+  border-bottom: 1px solid #fff;
+  font-size: 42px;
+  font-style: italic;
+  padding: 0.5rem 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px #333;
+}
+
+.advert-card-img {
+  width: 400px;
+}
+
+.items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-wrapper-item {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.info-wrapper-list {
+  text-align: center;
+}
+
+.list-title {
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 70%;
+}
+
+.list-item {
+  margin: 0.5rem 0;
+}
+
+.advert-card-btn {
+  background-color: inherit;
+  bottom: 20px;
+  border: 2px solid red;
+  border-radius: 12px;
+  cursor: pointer;
+  color: red;
+  padding: 0.5rem;
+  position: relative;
+  right: -300px;
+  width: 80px;
+  transition: all 0.5s;
+}
+
+.advert-card-btn:hover {
+  background-color: rgb(133, 3, 3);
+  border-color: rgb(165, 3, 3);
+  color: #fff;
+}

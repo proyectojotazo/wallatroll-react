@@ -10,6 +10,7 @@ import applyFilters from '../../utils/filters'
 import './AdvertsContainer.css'
 
 const AdvertsContainer = () => {
+  // TODO:Refactor?
   const adverts = useAdverts()
   const { filters, handleFilters } = useFilters()
 

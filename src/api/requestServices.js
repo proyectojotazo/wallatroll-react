@@ -7,5 +7,9 @@ export default {
 
   post: async function (path, data) {
     return await client.post(path, data)
+  },
+
+  delete: async function (path) {
+    return await client.delete(path)
   }
 }

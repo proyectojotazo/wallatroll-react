@@ -11,6 +11,7 @@ import './FormCreateNewAdvert.css'
 
 const FormCreateNewAdvert = () => {
   // TODO: Mirar errores
+  // TODO: Refactor
   const [, setError] = useState(false)
 
   const name = useInput({ type: 'text', name: 'name', setError })

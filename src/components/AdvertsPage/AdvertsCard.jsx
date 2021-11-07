@@ -9,7 +9,11 @@ const AdvertsCard = ({ advert }) => {
   return (
     <div className='card'>
       {advert.photo && (
-        <img className='card-img' src={`${URI}${advert.photo}`} alt='' />
+        <img
+          className='card-img'
+          src={`${URI}${advert.photo}`}
+          alt={advert.name}
+        />
       )}
       <h2 className='card-title'>{advert.name}</h2>
       <div className='card-data-wrapper'>
