@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 
 import { useLoginForm, useInput, useCheckbox } from '../../hooks/'
@@ -6,18 +7,24 @@ import Checkbox from './Checkbox'
 import { Button, Input, Msg } from '../common'
 
 import './FormLogin.css'
+import useMsgError from '../../hooks/useMsgError'
 
 const FormLogin = () => {
   // TODO: Refactor?
-  const [msg, setMsg] = useState({ success: false, error: false, message: '' })
+  const { error, setMsgError, resetMsgError } = useMsgError()
 
-  const email = useInput({ type: 'email', name: 'email', setMsg })
-  const password = useInput({ type: 'password', name: 'password', setMsg })
+  const email = useInput({ type: 'email', name: 'email', resetMsgError })
+  const password = useInput({
+    type: 'password',
+    name: 'password',
+    resetMsgError
+  })
+
   const checkbox = useCheckbox({ type: 'checkbox', name: 'rememberme' })
 
   const btnDisabled = email.value === '' || password.value === ''
 
-  const handleSubmit = useLoginForm(setMsg)
+  const handleSubmit = useLoginForm(setMsgError)
 
   return (
     <form className='form-container' noValidate onSubmit={handleSubmit}>
@@ -40,8 +47,8 @@ const FormLogin = () => {
         id='rememberme'
         {...checkbox}
       />
-      <Msg msg={msg} />
-      <Button variant='primary' margin='mx-1' disabled={btnDisabled}>
+      <Msg error={error} />
+      <Button variant='primary' disabled={btnDisabled}>
         Iniciar Sesión
       </Button>
     </form>

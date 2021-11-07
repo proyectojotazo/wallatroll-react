@@ -31,3 +31,18 @@
   display: flex;
   gap: 0.5rem;
 }
+
+.filter-btn {
+  align-self: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 90px;
+  cursor: pointer;
+  font-family: Montserrat, Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #999;
+  box-shadow: 1px 1px 1px #000;
+  width: 80px;
+  padding: 0.5rem;
+}

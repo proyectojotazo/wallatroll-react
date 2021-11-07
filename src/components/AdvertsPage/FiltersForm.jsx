@@ -109,7 +109,7 @@ const FiltersForm = ({ handleFilters, maxPrice }) => {
           {...checkMobile}
         />
         <Checkbox labelText='work' htmlFor='work' id='work' {...checkWork} />
-        <button>Search</button>
+        <button className='filter-btn'>Buscar</button>
       </div>
     </form>
   )

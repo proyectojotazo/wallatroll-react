@@ -5,18 +5,21 @@ import useNewAdvertForm from '../../hooks/Form/useNewAdvertForm'
 
 import SelectField from './SelectField'
 import Radio from './Radio'
-import { Button, Input } from '../common'
+import { Button, Input, Msg } from '../common'
 
 import './FormCreateNewAdvert.css'
+import useMsgError from '../../hooks/useMsgError'
 
 const FormCreateNewAdvert = () => {
   // TODO: Mirar errores
   // TODO: Refactor
-  const [, setError] = useState(false)
 
-  const name = useInput({ type: 'text', name: 'name', setError })
-  const price = useInput({ type: 'number', name: 'price', setError })
-  const file = useInput({ type: 'file', name: 'photo', setError })
+  const { error, setMsgError, resetMsgError } = useMsgError()
+
+  console.log(error)
+  const name = useInput({ type: 'text', name: 'name', resetMsgError })
+  const price = useInput({ type: 'number', name: 'price', resetMsgError })
+  const file = useInput({ type: 'file', name: 'photo', resetMsgError })
 
   const [radioSelected, setRadioSelected] = useState('true')
 
@@ -25,7 +28,7 @@ const FormCreateNewAdvert = () => {
   }
   const [tags, setTags] = useState([])
 
-  const handleSubmit = useNewAdvertForm(tags)
+  const handleSubmit = useNewAdvertForm(tags, setMsgError)
 
   const btnDisabled =
     name.value === '' || tags.length === 0 || price.value === ''
@@ -68,10 +71,12 @@ const FormCreateNewAdvert = () => {
         labelText='Precio *'
         htmlFor='price'
         placeholder='Introduce precio...'
+        min='0'
         {...price}
       />
       <Input labelText='Selecciona Fotogragia' htmlFor='photo' {...file} />
-      <Button variant='primary' margin='mx-1' disabled={btnDisabled}>
+      <Msg error={error} />
+      <Button variant='primary' disabled={btnDisabled}>
         Enviar
       </Button>
     </form>
