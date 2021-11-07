@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { useHistory } from 'react-router-dom'
 
-import advertsServices from '../../api/advertsServices'
-import validateAdvert from '../../utils/newAdvertValidators'
+import { advertsServices } from '../../api'
+
+import { validateAdvert } from '../../utils'
 
 const useNewAdvertForm = (tags, setMsgError) => {
   const history = useHistory()

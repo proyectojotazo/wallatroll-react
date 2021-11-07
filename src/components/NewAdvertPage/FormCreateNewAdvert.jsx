@@ -1,22 +1,19 @@
 import React, { useState } from 'react'
 
-import { useInput } from '../../hooks'
-import useNewAdvertForm from '../../hooks/Form/useNewAdvertForm'
+import { useInput, useMsgError, useNewAdvertForm } from '../../hooks'
+
+import { Button, Input, Msg } from '../common'
 
 import SelectField from './SelectField'
 import Radio from './Radio'
-import { Button, Input, Msg } from '../common'
 
 import './FormCreateNewAdvert.css'
-import useMsgError from '../../hooks/useMsgError'
 
 const FormCreateNewAdvert = () => {
   // TODO: Mirar errores
   // TODO: Refactor
 
   const { error, setMsgError, resetMsgError } = useMsgError()
-
-  console.log(error)
   const name = useInput({ type: 'text', name: 'name', resetMsgError })
   const price = useInput({ type: 'number', name: 'price', resetMsgError })
   const file = useInput({ type: 'file', name: 'photo', resetMsgError })

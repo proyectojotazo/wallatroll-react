@@ -3,18 +3,16 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 import './AdvertsCard.css'
+
 const URI = process.env.REACT_APP_API_BASE_URL
 
 const AdvertsCard = ({ advert }) => {
+  const img = advert.photo
+    ? `${URI}${advert.photo}`
+    : 'https://via.placeholder.com/150x150?text=No+Foto'
   return (
     <div className='card'>
-      {advert.photo && (
-        <img
-          className='card-img'
-          src={`${URI}${advert.photo}`}
-          alt={advert.name}
-        />
-      )}
+      <img className='card-img' src={img} alt={advert.name} />
       <h2 className='card-title'>{advert.name}</h2>
       <div className='card-data-wrapper'>
         <p className='card-data-text'>Precio: {advert.price}€</p>

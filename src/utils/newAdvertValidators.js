@@ -14,10 +14,12 @@ const validatePrice = data => {
 const validateFile = data => {
   // Obtenemos el nombre del archivo y lo separamos por los puntos
   const photoNameSplitted = data.get('photo').name.split('.')
+  const noFile = photoNameSplitted.length === 1 // No enviamos foto
+
   // El último elemento de la lista será la extensión del archivo
   const photoExt = photoNameSplitted[photoNameSplitted.length - 1]
   const filesAccepted = ['jpg', 'jpeg', 'png', 'gif']
-  return filesAccepted.includes(photoExt)
+  return noFile || filesAccepted.includes(photoExt)
 }
 
 const validateAdvert = data => {
@@ -40,8 +42,6 @@ const validateAdvert = data => {
     .map(el => el[1])
   const validAdvert = validName && validPrice && validFile
 
-  console.log('errMsgs', errMsgs)
-  console.log('errMsgsFiltered', errMsgsFiltered)
   return { validAdvert, errMsgsFiltered }
 }
 

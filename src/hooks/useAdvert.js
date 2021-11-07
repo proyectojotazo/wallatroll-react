@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import advertsServices from '../api/advertsServices'
+import { advertsServices } from '../api'
 
 const useAdvert = id => {
   const history = useHistory()

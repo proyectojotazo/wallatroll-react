@@ -1,13 +1,11 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React from 'react'
 
-import { useLoginForm, useInput, useCheckbox } from '../../hooks/'
+import { useLoginForm, useInput, useCheckbox, useMsgError } from '../../hooks/'
 
-import Checkbox from './Checkbox'
 import { Button, Input, Msg } from '../common'
+import Checkbox from './Checkbox'
 
 import './FormLogin.css'
-import useMsgError from '../../hooks/useMsgError'
 
 const FormLogin = () => {
   // TODO: Refactor?

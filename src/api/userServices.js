@@ -1,7 +1,8 @@
 import requestServices from './requestServices'
+
 import { removeAuthorizationHeader, setAuthorizationHeader } from './client'
 
-import storage from '../utils/storage'
+import { storage } from '../utils'
 
 export default {
   getUserData: function (data) {

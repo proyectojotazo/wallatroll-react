@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import userServices from '../api/userServices'
+import { userServices } from '../api'
 
-import storage from '../utils/storage'
+import { storage } from '../utils'
 
 const isAuth = () => !!storage.get('token')
 

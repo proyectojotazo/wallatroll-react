@@ -5,7 +5,7 @@ import AdvertsCard from './AdvertsCard'
 import FiltersForm from './FiltersForm'
 
 import { useAdverts, useFilters } from '../../hooks'
-import applyFilters from '../../utils/filters'
+import { applyFilters } from '../../utils'
 
 import './AdvertsContainer.css'
 

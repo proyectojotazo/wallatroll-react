@@ -1,8 +1,9 @@
 import { useHistory, useLocation } from 'react-router-dom'
-import userServices from '../../api/userServices'
+
+import { userServices } from '../../api'
 import useAuth from '../../contexts/useAuth'
 
-const useForm = setMsgError => {
+const useLoginForm = setMsgError => {
   /**
    * setError is used to show an error when we recieve an invalid
    * username/password
@@ -30,4 +31,4 @@ const useForm = setMsgError => {
   return handleSubmit
 }
 
-export default useForm
+export default useLoginForm

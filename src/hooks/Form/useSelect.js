@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import advertsServices from '../../api/advertsServices'
+import { advertsServices } from '../../api'
 
 const useSelect = () => {
   const [tagSelected, setTagSelected] = useState('')
